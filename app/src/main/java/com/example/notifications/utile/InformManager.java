@@ -78,11 +78,10 @@ public class InformManager {
 
     //自定义通知
     public void setCustomization(RemoteViews remoteViews, int smallIcon, String ticker) {
-        builder = new NotificationCompat.Builder(context);
-        builder.setContent(remoteViews);
-        builder.setSmallIcon(smallIcon);
-        builder.setTicker(ticker);
-        notification = builder.build();
+        notification = InformCustomization.getBuilder(context).setContent(remoteViews)
+                .setSmallIcon(smallIcon)
+                .setTicker(ticker)
+                .builder();
     }
 
     //--------------------设置特性----------------------------
@@ -128,6 +127,7 @@ public class InformManager {
     public void show(int NotifyId) {
         nm.notify(NotifyId, notification);
     }
+
     //删除通知
     public void clearNotifyTag(String tag, int notifyId) {
         nm.cancel(tag, notifyId);

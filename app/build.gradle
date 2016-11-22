@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.notifications"
-        minSdkVersion 21
+        minSdkVersion 18
         targetSdkVersion 23
         versionCode 11
         versionName "1.1"
